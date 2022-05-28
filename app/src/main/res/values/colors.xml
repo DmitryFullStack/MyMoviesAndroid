@@ -11,4 +11,5 @@
     <color name="main_title_text_color">#ECECEC</color>
     <color name="kinds">#FF3466</color>
     <color name="reviews">#6D6D80</color>
+    <color name="Content">#ECECEC</color>
 </resources>
