@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/details_bg"
     tools:context=".MovieDetailsActivity">
 
@@ -147,9 +147,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reviews">
+        app:layout_constraintTop_toBottomOf="@id/reviews"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -166,8 +168,8 @@
                 android:textColor="@color/Content"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="content"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -175,13 +177,137 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
+                android:paddingBottom="20dp"
                 android:src="@drawable/star"
-                android:text="@string/content"
+                android:text="@string/content_text"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="normal"
-                app:layout_constraintTop_toBottomOf="@id/content_title"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_title" />
+
+            <TextView
+                android:id="@+id/actors_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="@string/actorsTitle"
+                android:textColor="@color/Content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content" />
+
+            <LinearLayout
+                android:id="@+id/cast1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/cast2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/actors_title">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/robertDowneyJ" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:text="@string/actor1"
+                    android:textColor="@color/Content"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cast2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/cast3"
+                app:layout_constraintStart_toEndOf="@id/cast1"
+                app:layout_constraintTop_toBottomOf="@id/actors_title">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ChrisEvans" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:text="@string/actor2"
+                    android:textColor="@color/Content"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cast3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/cast4"
+                app:layout_constraintStart_toEndOf="@id/cast2"
+                app:layout_constraintTop_toBottomOf="@id/actors_title">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/MarkRuffalo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:text="@string/actor3"
+                    android:textColor="@color/Content"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cast4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cast3"
+                app:layout_constraintTop_toBottomOf="@id/actors_title">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ChrisHemsworth" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:text="@string/actor4"
+                    android:textColor="@color/Content"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content" />
+            </LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
